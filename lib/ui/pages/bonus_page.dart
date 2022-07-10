@@ -95,21 +95,14 @@ class BonusPage extends StatelessWidget {
     }
 
     Widget startButton() {
-      return Container(
-        margin: EdgeInsets.only(top: 50),
-        width: 220,
-        height: 55,
-        child: TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-                backgroundColor: kPrimaryColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius))),
-            child: Text(
-              "Start Fly Now",
-              style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: medium),
-            )),
-      );
+      return CustomButton(
+          title: "Start Fly Now",
+          width: 220,
+          margin: EdgeInsets.only(top: 50),
+          onPressed: () {
+            Navigator.pushNamedAndRemoveUntil(
+                context, '/main', (route) => false);
+          });
     }
 
     return Scaffold(

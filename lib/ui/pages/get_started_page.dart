@@ -34,26 +34,14 @@ class GetStartedPage extends StatelessWidget {
                   style:
                       whiteTextStyle.copyWith(fontSize: 16, fontWeight: light),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 50, bottom: 80),
-                  width: 220,
-                  height: 55,
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                        backgroundColor: kPrimaryColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(defaultRadius))),
+                CustomButton(
+                    title: "Get Started",
+                    width: 220,
+                    margin: EdgeInsets.only(top: 50, bottom: 80),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/sign-up');
-                    },
-                    child: Text(
-                      "Get Strated",
-                      style: whiteTextStyle.copyWith(
-                          fontSize: 18, fontWeight: medium),
-                    ),
-                  ),
-                ),
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/sign-up', (route) => false);
+                    }),
               ],
             ),
           )
